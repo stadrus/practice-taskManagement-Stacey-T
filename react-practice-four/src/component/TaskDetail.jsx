@@ -1,14 +1,22 @@
+import TaskList from './TaskList';
+import { useState } from 'react';
+
+function TaskDetails ()  {
+
+  const [tasks, setTasks] = useState('')
 
 
-function TaskDetails () {
-    const taskData = taskList.map((taskList, index) => <li key = {index}>{taskList}</li>);
-    const element = <ul>{taskData}</ul>; 
     return (
-        <div>
-            <h2>Task List</h2>
-        
-            <p>{element}</p>
+        <div> Tasks ID: {id}
+       <TaskList></TaskList>
+        <button onClick={() => setTasks((tasks) => tasks)}>
+            To-Dos {tasks}
+            </button>
         </div>
-    )
-}
+        </div>
+    );
+};
 export default TaskDetails; 
+
+//Step 4: Create the TaskDetail Component 
+//Retrieve the task ID from the URL and display the corresponding task details.  

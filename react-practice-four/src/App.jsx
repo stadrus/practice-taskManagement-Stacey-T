@@ -1,28 +1,31 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
+import TaskDetails from './component/TaskDetail';
+
+
+  // <button onClick={() => setTasks((tasks) => tasks)}>
+  //   To-Dos {tasks}
+  // </button>
 
 function App() {
-  const [details, setDetails] = useState('')
+  
 
   return (
-    <>
       <div>
-        
+        <header />
+        <h1>Task List</h1>
+        <BrowserRouter>
+            <Routes>
+              <>
+                <Route path= "/tasks/:id" element = {<TaskDetails />} 
+              />
+              </>
+            </Routes>
+        </BrowserRouter>
+
       </div>
-      <h1>Task List</h1>
-      <div className="card">
-        <button onClick={() => setDetails((details) => details)}>
-          To-Dos {details}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      
+  );
 }
 
 export default App
